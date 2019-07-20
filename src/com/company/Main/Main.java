@@ -52,6 +52,15 @@ ESEMPIO DI RISPOSTA FUNZIONANTE
  https://developer.twitter.com/en/docs/basics/authentication/guides/creating-a-signature.html
  */
 
+/*
+Questo file si occupa di:
+1. Recuperare i token dal sito di Altervista
+2. Decrittare i token
+3. Proporre un menù con varie scelte di interrogazioni a twitter
+
+
+
+ */
 
 package com.company.Main;
 
@@ -63,7 +72,6 @@ import org.apache.commons.codec.digest.HmacUtils;
 import org.apache.http.Header;
 import org.apache.http.client.methods.HttpGet;
 import org.json.*;
-
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -190,7 +198,10 @@ public class Main {
         System.out.println("\nStringa presa da Twitter\n");
         System.out.println("POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&include_entities%3Dtrue%26oauth_consumer_key%3Dxvz1evFS4wEEPTGEFPHBog%26oauth_nonce%3DkYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1318622958%26oauth_token%3D370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb%26oauth_version%3D1.0%26status%3DHello%2520Ladies%2520%252B%2520Gentlemen%252C%2520a%2520signed%2520OAuth%2520request%2521");
 
-        //costruzione della chiave
+        /*
+        GENERAZIONE DELLA CHIAVE
+
+         */
         String signingKey = new String();
         signingKey+=URLEncoder.encode(oauth_cons_secret, "UTF-8");
         signingKey+="&";
@@ -232,16 +243,30 @@ public class Main {
         OkHttpClient client = new OkHttpClient();
         //JSONObject obj = new JSONObject("{...}");
 
-        String oauth = generateOAuth(true, "GET", "https://api.twitter.com/1.1/statuses/user_timeline.json");
+        OauthClient oauthClient = new OauthClient(oauth_cons_token, oauth_cons_secret, oauth_user_secret, oauth_user_token);
+
+        String oauth = oauthClient.generateOAuth(true, "GET", "https://api.twitter.com/1.1/statuses/user_timeline.json", oauthClient);
+
+        /*
         Request request = new Request.Builder()
                 .url("https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2")
                 .get()
-                .addHeader("Authorization", "OAuth realm=\"dipalma.biagio%40gmail.com\",oauth_consumer_key=\"4mEq9HTFWJIsVDAWnh0rOPPaj\",oauth_token=\"3227549738-zcDNPN4tHKxUxZK7L3dzhkNOK3yyNG7tNBANj7a\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1561654080\",oauth_nonce=\"sTBrZ1DgvnS\",oauth_version=\"1.0\",oauth_signature=\"jkMXU4UQSzRSoh7y9PgbbQU7mhk%3D\"")
-                //.addHeader("Authorization", oauth)
+                .addHeader("Authorization", "OAuth realm=\"dipalma.biagio%40gmail.com\",oauth_consumer_key=\"4mEq9HTFWJIsVDAWnh0rOPPaj\",oauth_token=\"3227549738-zcDNPN4tHKxUxZK7L3dzhkNOK3yyNG7tNBANj7a\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1563629823\",oauth_nonce=\"qlfyJv6FBEe\",oauth_version=\"1.0\",oauth_signature=\"LH8ZrnkNw8rbTYas%2BDN6B%2B0Rhww%3D\"")
+                //.addHeader("Authorization", oauth
+                .addHeader("Accept", "/**")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "api.twitter.com")
+                .addHeader("accept-encoding", "gzip, deflate")
+                .addHeader("Connection", "keep-alive")
+                .addHeader("cache-control", "no-cache")
                 .build();
+
         Response response = client.newCall(request).execute();
         System.out.println(response);
         System.out.println(response.body().toString());
+
+
+
         System.out.println("INVERSIONE FIRMA");
         System.out.println("\nOauth generato da me:\n");
         System.out.println(oauth);
@@ -253,5 +278,9 @@ public class Main {
 
         System.out.println("PACCHETTO INVIATO");
         System.out.println(request.headers());
+        */
+
+        System.out.println(oauth);
+
     }
 }
