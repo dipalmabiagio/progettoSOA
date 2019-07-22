@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/projSOA/META-INF/projSOA.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/JsonReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/OauthClient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main/JsonReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projSOA/META-INF/projSOA.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,6 +14,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
@@ -26,11 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="258" column="13" lean-forward="true" selection-start-line="258" selection-start-column="13" selection-end-line="258" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="352">
+              <caret line="75" column="24" lean-forward="true" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -38,10 +34,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-120">
+            <state relative-caret-position="2145">
               <caret line="155" selection-start-line="155" selection-end-line="155" />
               <folding>
-                <element signature="e#0#66#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -107,11 +102,12 @@
         <option value="$PROJECT_DIR$/src/com/company/Main/JsonReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
+        <option value="$PROJECT_DIR$/Java/src/com/company/Main/Main.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="714" />
+    <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -127,23 +123,12 @@
               <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
               <item name="projSOA" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projSOA" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projSOA" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,6 +137,12 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Java" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -264,13 +255,20 @@
       <option name="project" value="LOCAL" />
       <updated>1563356185379</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="riorganizzazione file, inizio implementazione firma">
+      <created>1563634790857</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1563634790857</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26180258" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2653791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -279,7 +277,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -301,7 +299,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit Iniziale" />
     <MESSAGE value="Aggiunta commenti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta commenti" />
+    <MESSAGE value="riorganizzazione file, inizio implementazione firma" />
+    <option name="LAST_COMMIT_MESSAGE" value="riorganizzazione file, inizio implementazione firma" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Parameters.java" />
@@ -338,31 +337,27 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/HttpClientExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/JsonReader.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
+        <state relative-caret-position="352">
+          <caret line="75" column="24" lean-forward="true" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
+        <state relative-caret-position="2145">
           <caret line="155" selection-start-line="155" selection-end-line="155" />
           <folding>
-            <element signature="e#0#66#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="258" column="13" lean-forward="true" selection-start-line="258" selection-start-column="13" selection-end-line="258" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
         </state>
       </provider>
     </entry>

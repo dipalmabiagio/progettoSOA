@@ -65,13 +65,6 @@ Questo file si occupa di:
 package com.company.Main;
 
 import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import org.apache.commons.codec.digest.HmacAlgorithms;
-import org.apache.commons.codec.digest.HmacUtils;
-import org.apache.http.Header;
-import org.apache.http.client.methods.HttpGet;
-import org.json.*;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
@@ -82,8 +75,6 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
 import java.util.Random;
-
-import static java.security.spec.MGF1ParameterSpec.SHA1;
 
 public class Main {
     private static String oauth_cons_token = "4mEq9HTFWJIsVDAWnh0rOPPaj";
