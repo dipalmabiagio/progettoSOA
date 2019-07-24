@@ -1,3 +1,8 @@
+/**
+ * Questa classe si occupa di fornire il metodo per il percent encoding,
+ * utile per costruire la stringa da firmare
+ */
+
 package com.company.Main;
 
 import java.net.URLEncoder;
@@ -7,7 +12,7 @@ public class PercentEncode {
 
     /**
      * metodo per il "percent encoding"
-     *
+     * @param value - da codificare
      * @return stringa codificata
      */
     static String encode(String value) {
@@ -33,6 +38,6 @@ public class PercentEncode {
                 sb += focus;
             }
         }
-        return sb.toString();
+        return sb;
     }
 }

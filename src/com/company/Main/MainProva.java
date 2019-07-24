@@ -70,6 +70,7 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Base64;
@@ -83,6 +84,10 @@ public class MainProva {
 
     private static String stringToSignTwitter = "POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&include_entities%3Dtrue%26oauth_consumer_key%3Dxvz1evFS4wEEPTGEFPHBog%26oauth_nonce%3DkYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1318622958%26oauth_token%3D370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb%26oauth_version%3D1.0%26status%3DHello%2520Ladies%2520%252B%2520Gentlemen%252C%2520a%2520signed%2520OAuth%2520request%2521";
     private static String keyTwitter = "kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw&LswwdoUaIvS8ltyTt5jkRh4J50vUPVVHtR2YPi5kE";
+
+    //link dal quale recuperare le credenziali cifrate in AES
+    //TODO inserire il link da dove recuperare i token
+    private static URL urlCredentials;
 
     private static String encodeCredentials(String key, String value) throws UnsupportedEncodingException {
 
@@ -172,7 +177,6 @@ public class MainProva {
         7 - If there are more key/value pairs remaining, append a ‘&’ character to the output string.
          */
 
-
         System.out.println("\nRiferimento:"+DST+"\n");
 
         String signatureString = new String();
@@ -256,6 +260,19 @@ public class MainProva {
     //"OAuth realm=\"dipalma.biagio%40gmail.com\",oauth_consumer_key=\"4mEq9HTFWJIsVDAWnh0rOPPaj\",oauth_token=\"3227549738-zcDNPN4tHKxUxZK7L3dzhkNOK3yyNG7tNBANj7a\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1561630175\",oauth_nonce=\"OhNcPQO7Geu\",oauth_version=\"1.0\",oauth_signature=\"hr1JfgGzMFJ0v6UuE2Z2SinWBts%3D";
     //
     public static void main (String args[]) throws IOException, InvalidKeyException, NoSuchAlgorithmException {
+        //Recupero i token dal sito web e li decritto
+        String textFromPage = WebReader.fetchPage(urlCredentials);
+        String tokens [] = WebReader.parseText(textFromPage);
+
+        //inserisco i token nei campi privati di questa classe
+        //TODO sistemare i numeri in base all'ordine di fetching
+        oauth_cons_secret = tokens[0];
+        oauth_cons_token = tokens[1];
+        oauth_user_secret = tokens[2];
+        oauth_user_token = tokens[3];
+
+
+
         OkHttpClient client = new OkHttpClient();
         //JSONObject obj = new JSONObject("{...}");
 
