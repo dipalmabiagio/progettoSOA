@@ -266,13 +266,11 @@ public class MainProva {
 
         //inserisco i token nei campi privati di questa classe
         //TODO sistemare i numeri in base all'ordine di fetching
-        oauth_cons_secret = tokens[0];
-        oauth_cons_token = tokens[1];
-        oauth_user_secret = tokens[2];
-        oauth_user_token = tokens[3];
-
-
-
+        oauth_cons_secret = AESCrypto.decrypt(tokens[0]);
+        oauth_cons_token = AESCrypto.decrypt(tokens[1]);
+        oauth_user_secret = AESCrypto.decrypt(tokens[0]);
+        oauth_user_token = AESCrypto.decrypt(tokens[0]);
+        
         OkHttpClient client = new OkHttpClient();
         //JSONObject obj = new JSONObject("{...}");
 

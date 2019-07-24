@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main/WebReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,8 +35,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/MainProva.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="88" column="54" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+            <state relative-caret-position="361">
+              <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
               <folding>
                 <element signature="e#0#13279#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -335,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563798340191</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- aggiunta metodi per cifratura e decifratura, utili a per operare sui token &#10;- inserimento della classe per recuperare i token, in forma cifrata dal portale web e per l'estrazione dei token">
+      <created>1563991623627</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563991623627</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -405,7 +409,8 @@
     <MESSAGE value="creazione cartella per php" />
     <MESSAGE value="generazione della firma" />
     <MESSAGE value="creazione cartella per il php" />
-    <option name="LAST_COMMIT_MESSAGE" value="creazione cartella per il php" />
+    <MESSAGE value="- aggiunta metodi per cifratura e decifratura, utili a per operare sui token &#10;- inserimento della classe per recuperare i token, in forma cifrata dal portale web e per l'estrazione dei token" />
+    <option name="LAST_COMMIT_MESSAGE" value="- aggiunta metodi per cifratura e decifratura, utili a per operare sui token &#10;- inserimento della classe per recuperare i token, in forma cifrata dal portale web e per l'estrazione dei token" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Parameters.java" />
@@ -503,8 +508,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/MainProva.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="88" column="54" selection-start-line="88" selection-start-column="54" selection-end-line="88" selection-end-column="54" />
+        <state relative-caret-position="361">
+          <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
           <folding>
             <element signature="e#0#13279#0" expanded="true" />
             <element signature="imports" expanded="true" />
