@@ -8,7 +8,6 @@ package com.company.Main;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 
@@ -25,12 +24,6 @@ public class WebReader {
         String line = "";
 
         try {
-
-            try {
-                url = new URL("http://www.something.com");
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            }
             br = new BufferedReader(new InputStreamReader(url.openStream()));
 
             StringBuilder sb = new StringBuilder();
@@ -50,7 +43,7 @@ public class WebReader {
             }
 
         }
-
+        System.out.println("line:");
         return line;
     }
 
@@ -59,10 +52,22 @@ public class WebReader {
      * @param line - stringa recuperata dalla lettura del testo nella pagina web
      * @return tokens - array dei tokens decifrati
      */
+    //TODO finire questo metodo
     public static String[] parseText(String line) {
 
-        String [] arguments;
+        String [] arguments = line.split(",");
         String [] tokens = new String [4];
+        for(int i= 0; i< arguments.length; i++){
+            String arg[] = arguments[i].split(":");
+            tokens[i] = arg[1];
+        }
+        /*
+        ORDINE DEI TOKEN RECUPERATI
+        1 - Consumer Key
+        2 - Consumer Secret
+        3 - Access Token
+        4 - Access Token Secret
+         */
 
 
         return tokens;

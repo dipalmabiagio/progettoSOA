@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main/WebReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/WebReader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,36 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="78" column="13" selection-end-line="277" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/MainProva.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
-              <folding>
-                <element signature="e#0#13279#0" expanded="true" />
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main/AESCrypto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+            <state relative-caret-position="164">
+              <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -59,10 +37,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="126" selection-start-line="126" selection-end-line="126" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/WebReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
+            <state relative-caret-position="417">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -95,6 +85,7 @@
       <find>append</find>
       <find>httpget</find>
       <find>URL</find>
+      <find>urlCredentials</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -121,11 +112,11 @@
         <option value="$PROJECT_DIR$/src/com/company/Main/Main2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/JsonReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
         <option value="$PROJECT_DIR$/Java/src/com/company/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/WebReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/WebReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/MainProva.java" />
       </list>
     </option>
@@ -140,6 +131,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -163,7 +155,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -339,14 +330,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563991623627</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- aggiunta metodi per cifratura e decifratura, utili a per operare sui token &#10;- inserimento della classe per recuperare i token, in forma cifrata dal portale web e per l'estrazione dei token">
+      <created>1563991680990</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563991680990</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26895565" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2725322" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -355,7 +353,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -447,41 +445,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/HttpClientExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="78" column="13" selection-end-line="277" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2250">
-          <caret line="155" selection-start-line="155" selection-end-line="155" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/WebReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="64" column="42" selection-start-line="64" selection-start-column="42" selection-end-line="64" selection-end-column="42" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -495,10 +462,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="753">
+          <caret line="78" column="13" selection-end-line="277" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/AESCrypto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        <state relative-caret-position="498">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="32" selection-end-line="61" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/WebReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -508,10 +506,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/MainProva.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="271" column="56" selection-start-line="271" selection-start-column="56" selection-end-line="271" selection-end-column="56" />
+        <state relative-caret-position="164">
+          <caret line="43" column="41" lean-forward="true" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
           <folding>
-            <element signature="e#0#13279#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>

@@ -60,7 +60,6 @@ public class AESCrypto{
             cipher.init(Cipher.DECRYPT_MODE, skeySpec, iv);
 
             //decodifica base 64
-
             byte[] decodedBytes = Base64.getDecoder().decode(encodedBytes);
             String line = decodedBytes.toString();
             return line;
