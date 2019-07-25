@@ -5,10 +5,10 @@
  */
 
 package com.company.Main;
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.Scanner;
 
 
 public class WebReader {
@@ -20,29 +20,9 @@ public class WebReader {
      * @throws IOException
      */
     public static String fetchPage(URL url) throws IOException {
-        BufferedReader br = null;
-        String line = "";
+        Scanner s = new Scanner(url.openStream());
+        String line = s.nextLine();
 
-        try {
-            br = new BufferedReader(new InputStreamReader(url.openStream()));
-
-            StringBuilder sb = new StringBuilder();
-            while ((line = br.readLine()) != null) {
-
-                sb.append(line);
-                sb.append(System.lineSeparator());
-            }
-            return line;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-
-            if (br != null) {
-                br.close();
-            }
-
-        }
         System.out.println("line:");
         return line;
     }
@@ -52,14 +32,15 @@ public class WebReader {
      * @param line - stringa recuperata dalla lettura del testo nella pagina web
      * @return tokens - array dei tokens decifrati
      */
-    //TODO finire questo metodo
     public static String[] parseText(String line) {
 
         String [] arguments = line.split(",");
         String [] tokens = new String [4];
+        System.out.println("token cifrati");
         for(int i= 0; i< arguments.length; i++){
             String arg[] = arguments[i].split(":");
             tokens[i] = arg[1];
+            System.out.println(tokens[i]+"\n");
         }
         /*
         ORDINE DEI TOKEN RECUPERATI
@@ -68,8 +49,6 @@ public class WebReader {
         3 - Access Token
         4 - Access Token Secret
          */
-
-
         return tokens;
     }
 

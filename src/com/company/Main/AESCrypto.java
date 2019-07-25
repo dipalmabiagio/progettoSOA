@@ -10,10 +10,11 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Base64;
 
+
 public class AESCrypto{
 
-    private static final String key = "aesEncryptionKey";
-    private static final String initVector = "encryptionIntVec";
+    private static final String key = "dipalmalongoprog";
+    private static final String initVector = "progettosoasecur";
 
 
     /**
@@ -24,8 +25,8 @@ public class AESCrypto{
     public static String encrypt(String value) {
         try {
             //parametri
-            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes("UTF-8"));
-            SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");
+            IvParameterSpec iv = new IvParameterSpec(initVector.getBytes("UTF-16"));
+            SecretKeySpec skeySpec = new SecretKeySpec(key.getBytes("UTF-16"), "AES");
 
             //modalità
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");

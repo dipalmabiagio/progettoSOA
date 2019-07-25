@@ -22,7 +22,6 @@ public class MainProva {
     private static String oauth_user_secret = "HBYf2iWujRKUOg3PBt6GlhW8nejvaAOA24MKN2EFDz3yi";
 
     //link dal quale recuperare le credenziali cifrate in AES
-    //TODO inserire il link da dove recuperare i token
     private static URL urlCredentials;
 
     static {
@@ -45,12 +44,12 @@ public class MainProva {
         String tokens[] = WebReader.parseText(textFromPage);
 
         //inserisco i token nei campi privati di questa classe e applico la decifratura
-        //TODO sistemare i numeri in base all'ordine di fetching
         oauth_cons_secret = AESCrypto.decrypt(tokens[1]);
         oauth_cons_token = AESCrypto.decrypt(tokens[0]);
         oauth_user_secret = AESCrypto.decrypt(tokens[3]);
         oauth_user_token = AESCrypto.decrypt(tokens[2]);
 
+        System.out.println("token decrittati:");
         for (int i= 0; i< tokens.length; i++){
             System.out.println(tokens[i]);
         }
