@@ -17,7 +17,7 @@ $access_token = $_SESSION['access_token'];
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
 //FUNZIONE PER CRIPTARE E DECRIPTARE I TOKEN
-function my_simple_crypt( $string, $action = 'e' ) {
+/* function my_simple_crypt( $string, $action = 'e' ) {
     
     $secret_key = 'SOA_Security_project';
     $secret_iv = '933528-938473';
@@ -35,27 +35,30 @@ function my_simple_crypt( $string, $action = 'e' ) {
     }
  
     return $output;
-}
+} */
 
 
 //ENCRYPTION DEI TOKEN
-$key_enc = my_simple_crypt( CONSUMER_KEY, 'e' );
+/* $key_enc = my_simple_crypt( CONSUMER_KEY, 'e' );
 $secr_enc = my_simple_crypt( CONSUMER_SECRET, 'e' );
 $tok_enc = my_simple_crypt( $access_token['oauth_token'], 'e' );
-$tok_secr_enc = my_simple_crypt( $access_token['oauth_token_secret'], 'e' );
+$tok_secr_enc = my_simple_crypt( $access_token['oauth_token_secret'], 'e' ); */
 
-echo CONSUMER_KEY."<br>";
-echo $key_enc;
 //esempio decriptare
 //$decrypted = my_simple_crypt( 'dHNZM28xMWVSWlBhM3d5bmlta25oRTl3aVc2a3RCZjl2U0VqMGV1U0NnST0=', 'd' );
 
+//ENCRYPTION DEI TOKEN
+$key_enc = "Q0UyUW43ZXdIdmkxR2NuTW9rYmZZeWxsZQ==";
+$secr_enc = "Q1J1U3U4aXYwblBDQ0hDUW1kNUFSNWowYXlsdkdod1djcGg4TnZOSmlSc2I2akRMdlk=";
+$tok_enc = "MTE1MjU3MDcyNDA4NDgwMTUzNi1EQ3ZoZDIxdUdZYjlGM3dpWDRXc3hyYVk1WUtMaU4=";
+$tok_secr_enc = "Wkdoc0x1U0RPREpQT09yNmNoVklOZ1c3Smx1MHM5d1FjRzdWbzRsUXdsdUk3";
 
 //MEMORIZZAZIONE DEI TOKEN IN UN FILE
 $file =fopen("token.txt", "w+");
-fwrite($file, "CONSUMER KEY: ".$key_enc.", ");
-fwrite($file, "CONSUMER SECRET: ".$secr_enc.", ");
-fwrite($file, "ACCESS TOKEN: ".$tok_enc.", ");
-fwrite($file, "ACCESS TOKEN SECRET: ".$tok_secr_enc);
+fwrite($file, "CONSUMER KEY:".$key_enc.",");
+fwrite($file, "CONSUMER SECRET:".$secr_enc.",");
+fwrite($file, "ACCESS TOKEN:".$tok_enc.",");
+fwrite($file, "ACCESS TOKEN SECRET:".$tok_secr_enc);
 fclose($file);
 
 //credenziali

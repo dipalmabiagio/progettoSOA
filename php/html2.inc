@@ -36,7 +36,7 @@ echo "TWEETS IN THE TIMELINE: "."<br>";
 print_r($tweets);
 	
 echo "<br><br>";
-echo "<a href='https://localhost/twitteroauth-progetto/connect.php'><button>LOGOUT</button></a>";
+echo "<a href='https://progettosoasecurity.altervista.org/connect.php'><button>LOGOUT</button></a>";
 		?>
       </pre>
     </p>
@@ -46,11 +46,9 @@ echo "<a href='https://localhost/twitteroauth-progetto/connect.php'><button>LOGO
 </body>
 <footer>
 	<div class="link">
-	<p>If you are having issues try <a href='./clearsessions.php'>clearing your session</a>.</p>
-
       <p>
         Links:
-		<a href='https://github.com/dipalmabiagio/progettoSOA'>Source Code</a> &amp;
+        <a href='https://github.com/dipalmabiagio/progettoSOA'>Source Code</a> &amp;
         <a href='http://github.com/abraham/twitteroauth'>Twitter PHP Library</a>
       </p>
 	</div>
