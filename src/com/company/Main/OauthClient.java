@@ -11,6 +11,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Base64;
 import java.util.Random;
 
@@ -21,8 +22,7 @@ public class OauthClient {
     static String oauth_cons_secret;
     static String oauth_user_secret;
 
-    static String stringToSignTwitter = "POST&https%3A%2F%2Fapi.twitter.com%2F1.1%2Fstatuses%2Fupdate.json&include_entities%3Dtrue%26oauth_consumer_key%3Dxvz1evFS4wEEPTGEFPHBog%26oauth_nonce%3DkYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg%26oauth_signature_method%3DHMAC-SHA1%26oauth_timestamp%3D1318622958%26oauth_token%3D370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb%26oauth_version%3D1.0%26status%3DHello%2520Ladies%2520%252B%2520Gentlemen%252C%2520a%2520signed%2520OAuth%2520request%2521";
-    static String keyTwitter = "kAcSOqF21Fu85e7zjz7ZN2U4ZRhfV3WpwPAoE3Z7kBw&LswwdoUaIvS8ltyTt5jkRh4J50vUPVVHtR2YPi5kE";
+    private static final SecureRandom secureRandom = new SecureRandom();
 
     /**
      * Costruttore
@@ -38,6 +38,30 @@ public class OauthClient {
         this.oauth_user_token = oauth_user_token;
     }
 
+    /**
+     * Metodo che genera la nonce
+     * @return nonce
+     */
+    private static String generateNonce() {
+        String nonce = Long.toString(Math.abs(secureRandom.nextLong())) + System.currentTimeMillis();
+        return nonce;
+    }
+
+    /**
+     * Metodo che genera il timestamp
+     * @return timestamp
+     */
+    private static long generateTimestamp() {
+        long timestamp = System.currentTimeMillis() / 1000;
+        return timestamp;
+    }
+
+    /**
+     *
+     * @param key
+     * @param value
+     * @return
+     */
     static String encodeCredentials(String key, String value){
 
         String q = PercentEncode.encode(key);
@@ -136,16 +160,16 @@ public class OauthClient {
         System.out.println("1 - "+DST);
 
         //realm
-        DST+= encodeCredentials("realm", "dipalma.biagio@gmail.com");
+        DST+= encodeCredentials("realm", "progettosoasec@gmail.com");
         DST+=",";
 
-         System.out.println("2 - "+DST);
+        System.out.println("2 - "+DST);
 
         //consumer key
         DST += encodeCredentials("oauth_consumer_key", client.oauth_cons_token);
         DST+=",";
 
-         System.out.println("3 - "+DST);
+        System.out.println("3 - "+DST);
 
         DST += encodeCredentials("oauth_token", client.oauth_user_token);
         DST+=",";
@@ -156,27 +180,25 @@ public class OauthClient {
 
         DST += encodeCredentials("oauth_signature_method", "HMAC-SHA1");
         DST+=",";
-         System.out.println("5 - "+DST);
+        System.out.println("5 - "+DST);
 
         //TIMESTAMP
-        long timestamp = 1564052198;
-        //long timestamp = System.currentTimeMillis() / 1000L;
-         DST += encodeCredentials("oauth_timestamp", String.valueOf(timestamp));
-         DST+=",";
-         System.out.println("6 - "+DST);
+        long timestamp = generateTimestamp();
+        DST += encodeCredentials("oauth_timestamp", Long.toString(timestamp));
+        DST+=",";
+        System.out.println("6 - "+DST);
 
         //NONCE
         //long nonce = timestamp + (long)RAND.nextInt()
-        String nonce = "zOKnswVyzXX";
-         DST += encodeCredentials("oauth_nonce", String.valueOf(nonce));
-         DST+=",";
-         System.out.println("7 - "+DST);
+        String nonce = generateNonce();
+        DST += encodeCredentials("oauth_nonce", String.valueOf(nonce));
+        DST+=",";
+        System.out.println("7 - "+DST);
 
         //versione di oauth
         DST+= encodeCredentials("oauth_version","1.0");
         DST+=",";
          System.out.println("8 - "+DST);
-
 
         //GENERAZIONE FIRMA
         String signatureBaseString = generateSignatureBaseString(DST, client, nonce, String.valueOf(timestamp), method, URI);
