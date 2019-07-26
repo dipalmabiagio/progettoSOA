@@ -51,7 +51,7 @@ public class MainProva {
 
         System.out.println("token decrittati:");
         for (int i= 0; i< tokens.length; i++){
-            System.out.println(tokens[i]);
+            System.out.println((AESCrypto.decrypt(tokens[i])));
         }
     }
 
