@@ -1,0 +1,19 @@
+.login {
+	font-size: 16px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+.link {
+	font-size: 11px;
+	text-align:center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+button {
+width: 85px;
+font-family: "MV boli";
+font-size: 12px;
+padding: 1px;
+color: #ffffff;
+border-radius: 10px;
+background-color: #1589FF;
+}
