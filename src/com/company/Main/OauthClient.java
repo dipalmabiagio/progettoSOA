@@ -57,7 +57,8 @@ public class OauthClient {
     }
 
     /**
-     *
+     * Metodo per codificare le credenziali all'interno della stringa
+     * dello header Authorization
      * @param key
      * @param value
      * @return
@@ -79,7 +80,13 @@ public class OauthClient {
         return signatureString;
     }
 
-
+    /**
+     * Metodo che genera la firma
+     * @param signatureBaseStr
+     * @param oAuthConsumerSecret
+     * @param oAuthTokenSecret
+     * @return
+     */
     private static String generateSignature(String signatureBaseStr, String oAuthConsumerSecret, String oAuthTokenSecret) {
 
         /*
@@ -87,7 +94,7 @@ public class OauthClient {
         1. Percent encode consumer secret
         2. Ampersand (&)
         3. Percent encode the token secret
-         */
+        */
 
         byte[] byteHMAC = null;
         try {
@@ -109,6 +116,17 @@ public class OauthClient {
         return str;
     }
 
+
+    /**
+     * Metodo che genera la stringa da firmare
+     * @param DST
+     * @param client
+     * @param nonce
+     * @param timestamp
+     * @param method
+     * @param URI
+     * @return
+     */
     private static String generateSignatureBaseString (String DST, OauthClient client, String nonce, String timestamp, String method, String URI){
         /*
         GENERAZIONE DELLA FIRMA - step 1: generazione della signatureString
@@ -123,15 +141,12 @@ public class OauthClient {
          */
 
         String signatureString = new String();
-        //signatureString = URLEncoder.encode("include_entities=true", "UTF-8");
-        signatureString += "include_entities=true";
         signatureString = appendSignature(signatureString, ("oauth_consumer_key="+ client.oauth_cons_token));
         signatureString = appendSignature(signatureString, ("oauth_nonce="+nonce));
         signatureString = appendSignature(signatureString, ("oauth_signature_method="+"HMAC-SHA1"));
         signatureString = appendSignature(signatureString, ("oauth_timestamp="+timestamp));
         signatureString = appendSignature(signatureString, ("oauth_token="+ client.oauth_user_token));
         signatureString = appendSignature(signatureString, ("oauth_version=1.0"));
-        signatureString = appendSignature(signatureString, ("status=prova"));
 
         /*
         GENERAZIONE DELLA STRINGA BASE DA FIRMARE
@@ -153,6 +168,17 @@ public class OauthClient {
         return signatureBaseString;
     }
 
+    /**
+     * Metodo che genera la stringa da inserire nello header Authorization
+     * @param entities
+     * @param method
+     * @param URI
+     * @param client
+     * @return
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeyException
+     */
      public static String generateOAuth(boolean entities, String method, String URI, OauthClient client) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         String DST="OAuth ";
         Random RAND = new Random();
@@ -204,7 +230,8 @@ public class OauthClient {
         String signatureBaseString = generateSignatureBaseString(DST, client, nonce, String.valueOf(timestamp), method, URI);
 
         //AGGIUNTA FIRMA
-         DST += encodeCredentials("oauth_signature", generateSignature(signatureBaseString, OauthClient.oauth_cons_secret, OauthClient.oauth_user_secret));
+         //DST += encodeCredentials("oauth_signature", generateSignature(signatureBaseString, OauthClient.oauth_cons_secret, OauthClient.oauth_user_secret));
+         DST+= generateSignature(signatureBaseString, oauth_cons_secret,oauth_user_secret);
          System.out.println("9 - "+DST);
 
         return DST;

@@ -8,18 +8,22 @@
 
 package com.company.Main;
 
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-public class MainProva {
+public class Main{
 
-    private static String oauth_cons_token = "4mEq9HTFWJIsVDAWnh0rOPPaj";
-    private static String oauth_user_token = "3227549738-zcDNPN4tHKxUxZK7L3dzhkNOK3yyNG7tNBANj7a";
-    private static String oauth_cons_secret = "DhZlMbuMWYlSZZoM636CShzCC4JW5DyXLkVDkql84rCAamTwWJ";
-    private static String oauth_user_secret = "HBYf2iWujRKUOg3PBt6GlhW8nejvaAOA24MKN2EFDz3yi";
+    private static String oauth_cons_token = "CE2Qn7ewHvi1GcnMokbfYylle";
+    private static String oauth_user_token = "CRuSu8iv0nPCCHCQmd5AR5j0aylvGhwWcph8NvNJiRsb6jDLvY";
+    private static String oauth_cons_secret = "1152570724084801536-DCvhd21uGYb9F3wiX4WsxraY5YKLiN";
+    private static String oauth_user_secret = "ZGhsLuSDODJPOOr6chVINgW7Jlu0s9wQcG7Vo4lQwluI7";
 
     //link dal quale recuperare le credenziali cifrate in AES
     private static URL urlCredentials;
@@ -57,7 +61,28 @@ public class MainProva {
 
     public static void main (String args[]) throws IOException, InvalidKeyException, NoSuchAlgorithmException {
         //Recupero i token dal sito web e li decritto
-        fetchTokens();
+        //fetchTokens();
+
+        OkHttpClient myclient = new OkHttpClient();
+        OauthClient client = new OauthClient(oauth_cons_token,oauth_cons_secret,oauth_user_secret,oauth_user_token);
+
+        Request request = new Request.Builder()
+                .url("https://api.twitter.com/1.1/statuses/user_timeline.json")
+                .get()
+                .addHeader("Authorization",OauthClient.generateOAuth(true, "GET","https://api.twitter.com/1.1/statuses/user_timeline.json?",client))
+                .addHeader("User-Agent", "Mozilla 5.0")
+                .addHeader("Accept", "*/*")
+                .addHeader("Cache-Control", "no-cache")
+                .addHeader("Host", "api.twitter.com")
+                .addHeader("Cookie","guest_id=v1%3A156120075303723029; lang=it")
+                .addHeader("Accept-Encoding", "gzip, deflate")
+                .addHeader("Connection", "keep-alive")
+                .addHeader("cache-control", "no-cache")
+                .build();
+
+        System.out.println(request.header("Authorization"));
+        Response response = myclient.newCall(request).execute();
+        System.out.println(response);
 
 
         System.out.println("stringa finale \n\n");
