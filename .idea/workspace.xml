@@ -3,12 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/twitter4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/twitter4j__2_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Main/Main2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/OauthClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/OauthClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/JsonReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projSOA.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projSOA.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main/MainProva.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,10 +27,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main/MainProva.java">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
+            <state relative-caret-position="158">
+              <caret line="22" selection-start-line="22" selection-end-line="25" selection-end-column="94" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -39,9 +40,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
+            <state relative-caret-position="3420">
               <caret line="233" column="89" selection-start-line="233" selection-start-column="89" selection-end-line="233" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -111,9 +124,7 @@
         <option value="$PROJECT_DIR$/src/com/company/Main/Signature.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/HttpClientExample.java" />
         <option value="$PROJECT_DIR$/src/Main3.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/Main2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/JsonReader.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/Main.java" />
         <option value="$PROJECT_DIR$/Java/src/com/company/Main/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" />
@@ -122,8 +133,10 @@
         <option value="$PROJECT_DIR$/src/com/company/Main/HttpParameter.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/BASE64Encoder.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/UrlUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/MainProva.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/MainProva.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/Main2.java" />
       </list>
     </option>
   </component>
@@ -161,10 +174,6 @@
               <item name="projSOA" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -384,11 +393,19 @@
       <option name="project" value="LOCAL" />
       <updated>1564156008898</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="FIX Cifratura e Decifratura">
+      <created>1564239344819</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1564239344819</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14020029" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -407,7 +424,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.19277108" />
+      <window_info anchor="bottom" id="Messages" order="10" visible="true" weight="0.19277108" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -457,7 +474,8 @@
     <MESSAGE value="Fix Recupero credenziali cifrate" />
     <MESSAGE value="TOFIX decifratura token" />
     <MESSAGE value="Aggiunta metodi per generare nonce e timestamp" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta metodi per generare nonce e timestamp" />
+    <MESSAGE value="FIX Cifratura e Decifratura" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX Cifratura e Decifratura" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Parameters.java" />
@@ -561,17 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/MainProva.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/UrlUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -592,8 +599,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
+        <state relative-caret-position="3420">
           <caret line="233" column="89" selection-start-line="233" selection-start-column="89" selection-end-line="233" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="22" selection-start-line="22" selection-end-line="25" selection-end-column="94" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -640,6 +668,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
+          <last-edited>12</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
