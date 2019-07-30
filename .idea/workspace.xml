@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
+    <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="Stampa dei token cifrati">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main/Main2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/Main2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main/WebReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/WebReader.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,10 +24,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+            <state relative-caret-position="145">
+              <caret line="24" selection-start-line="24" selection-end-line="33" selection-end-column="5" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+              <folding>
                 <element signature="imports" expanded="true" />
               </folding>
             </state>
@@ -38,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3315">
+            <state relative-caret-position="2345">
               <caret line="233" column="89" selection-start-line="233" selection-start-column="89" selection-end-line="233" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -47,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/WebReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+            <state relative-caret-position="296">
+              <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -119,10 +130,12 @@
         <option value="$PROJECT_DIR$/src/com/company/Main/UrlUtils.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/MainProva.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/Main2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/Main.java" />
+        <option value="$PROJECT_DIR$/php/index.php" />
         <option value="$PROJECT_DIR$/src/com/company/Main/WebReader.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/prova.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/Main2.java" />
       </list>
     </option>
   </component>
@@ -196,22 +209,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.prova">
     <configuration name="AESCrypto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main.AESCrypto" />
-      <module name="projSOA" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.company.Main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpClientExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main.HttpClientExample" />
       <module name="projSOA" />
       <extension name="coverage">
         <pattern>
@@ -288,12 +288,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="prova" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main.prova" />
+      <module name="projSOA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.prova" />
+        <item itemvalue="Application.Main2" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.AESCrypto" />
-        <item itemvalue="Application.Main2" />
-        <item itemvalue="Application.MainProva" />
         <item itemvalue="Application.MainProva" />
       </list>
     </recent_temporary>
@@ -414,14 +427,28 @@
       <option name="project" value="LOCAL" />
       <updated>1564501195918</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="- Raggiunto il parallelismo tra java e php in cifratura e decifratura dei token&#10;- fix della lettura dei token">
+      <created>1564524843615</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1564524843615</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Stampa dei token cifrati">
+      <created>1564525258185</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1564525258185</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14306152" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14306152" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -430,7 +457,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.28674698" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -491,7 +518,9 @@
     <MESSAGE value="FIX Cifratura e Decifratura" />
     <MESSAGE value="Test libreria Twitter4j" />
     <MESSAGE value="FIX cifratura non congrua tra Java e PHP" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX cifratura non congrua tra Java e PHP" />
+    <MESSAGE value="- Raggiunto il parallelismo tra java e php in cifratura e decifratura dei token&#10;- fix della lettura dei token" />
+    <MESSAGE value="Stampa dei token cifrati" />
+    <option name="LAST_COMMIT_MESSAGE" value="Stampa dei token cifrati" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Parameters.java" />
@@ -552,26 +581,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="233" column="89" selection-start-line="233" selection-start-column="89" selection-end-line="233" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="150" selection-start-line="18" selection-start-column="150" selection-end-line="18" selection-end-column="150" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/AESCrypto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -585,8 +594,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+        <state relative-caret-position="145">
+          <caret line="24" selection-start-line="24" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="imports" expanded="true" />
@@ -594,12 +603,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/php/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/TwitterBase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/internal/http/HttpClientImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2313">
+          <caret line="253" selection-start-line="253" selection-end-line="253" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/Twitter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="278" selection-start-line="278" selection-end-line="278" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2345">
+          <caret line="233" column="89" selection-start-line="233" selection-start-column="89" selection-end-line="233" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/twitter4j.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/prova.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/WebReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="53" column="11" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+        <state relative-caret-position="296">
+          <caret line="51" column="27" lean-forward="true" selection-start-line="51" selection-start-column="27" selection-end-line="51" selection-end-column="27" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="103" lean-forward="true" selection-start-line="103" selection-end-line="103" />
+          <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
