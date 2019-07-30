@@ -45,20 +45,20 @@ public class Main {
         String tokens[] = WebReader.parseText(textFromPage);
 
         //inserisco i token nei campi privati di questa classe e applico la decifratura
-        oauth_cons_secret = AESCrypto.decrypt(tokens[1]);
-        oauth_cons_token = AESCrypto.decrypt(tokens[0]);
-        oauth_user_secret = AESCrypto.decrypt(tokens[3]);
-        oauth_user_token = AESCrypto.decrypt(tokens[2]);
+        oauth_cons_secret = AESCrypto.decrypt(AESCrypto.key,tokens[1]);
+        oauth_cons_token = AESCrypto.decrypt(AESCrypto.key,tokens[0]);
+        oauth_user_secret = AESCrypto.decrypt(AESCrypto.key,tokens[3]);
+        oauth_user_token = AESCrypto.decrypt(AESCrypto.key,tokens[2]);
 
         System.out.println("token decrittati:");
         for (int i= 0; i< tokens.length; i++){
-            System.out.println((AESCrypto.decrypt(tokens[i])));
+            System.out.println((AESCrypto.decrypt(AESCrypto.key,tokens[i])));
         }
     }
 
     public static void main (String args[]) throws IOException, InvalidKeyException, NoSuchAlgorithmException {
         //Recupero i token dal sito web e li decritto
-        //fetchTokens();
+        fetchTokens();
 
         /*
         OkHttpClient myclient = new OkHttpClient();

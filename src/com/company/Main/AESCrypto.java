@@ -15,6 +15,8 @@ public class AESCrypto {
 
     private static String CIPHER_NAME = "AES/CBC/PKCS5PADDING";
     private static int CIPHER_KEY_LEN = 16; //128 bits
+    static String key = "dipalmalongoprog";
+    String iv = "progettosoasecur";
 
     /**
      * Encrypt data using AES Cipher (CBC) with 128 bit key
@@ -89,5 +91,6 @@ public class AESCrypto {
 
         return null;
     }
+
 
 }
