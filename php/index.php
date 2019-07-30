@@ -60,10 +60,10 @@ $iv = "progettosoasecur";
 
 //MEMORIZZAZIONE DEI TOKEN IN UN FILE
 $file =fopen("token.txt", "w+");
-fwrite($file, "CONSUMER KEY:".$key_enc->encrypt($chiave, $iv, CONSUMER_KEY).",");
-fwrite($file, "CONSUMER SECRET:".$secr_enc->encrypt($chiave, $iv, CONSUMER_SECRET).",");
-fwrite($file, "ACCESS TOKEN:".$tok_enc->encrypt($chiave, $iv, $access_token['oauth_token']).",");
-fwrite($file, "ACCESS TOKEN SECRET:".$tok_sec_enc->encrypt($chiave, $iv, $access_token['oauth_token_secret']));
+fwrite($file, $key_enc->encrypt($chiave, $iv, CONSUMER_KEY).",");
+fwrite($file, $secr_enc->encrypt($chiave, $iv, CONSUMER_SECRET).",");
+fwrite($file, $tok_enc->encrypt($chiave, $iv, $access_token['oauth_token']).",");
+fwrite($file, $tok_sec_enc->encrypt($chiave, $iv, $access_token['oauth_token_secret']));
 fclose($file);
 
 //credenziali

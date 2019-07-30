@@ -33,16 +33,7 @@ public class WebReader {
      * @return tokens - array dei tokens decifrati
      */
     public static String[] parseText(String line) {
-/*
-        String [] arguments = line.split(",");
-        String [] tokens = new String [4];
-        System.out.println("token cifrati");
-        for(int i= 0; i< arguments.length; i++){
-            String arg[] = arguments[i].split(" \\");
-            tokens[i] = arg[1];
-            System.out.println(tokens[i]+"\n");
 
- */
         String tokens [] = line.split(",");
         return tokens;
         /*
