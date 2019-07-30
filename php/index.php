@@ -3,6 +3,7 @@
 session_start();
 require_once('twitteroauth/twitteroauth.php');
 require_once('config.php');
+include("class_encryption.php");
 
 
 //SE GLI ACCESS TOKEN NON SONO DISPONIBILI, FARE LA REDIRECT ALLA CONNECT PAGE
@@ -47,18 +48,22 @@ $tok_secr_enc = my_simple_crypt( $access_token['oauth_token_secret'], 'e' ); */
 //esempio decriptare
 //$decrypted = my_simple_crypt( 'dHNZM28xMWVSWlBhM3d5bmlta25oRTl3aVc2a3RCZjl2U0VqMGV1U0NnST0=', 'd' );
 
-//ENCRYPTION DEI TOKEN
-$key_enc = "Q0UyUW43ZXdIdmkxR2NuTW9rYmZZeWxsZQ==";
-$secr_enc = "Q1J1U3U4aXYwblBDQ0hDUW1kNUFSNWowYXlsdkdod1djcGg4TnZOSmlSc2I2akRMdlk=";
-$tok_enc = "MTE1MjU3MDcyNDA4NDgwMTUzNi1EQ3ZoZDIxdUdZYjlGM3dpWDRXc3hyYVk1WUtMaU4=";
-$tok_secr_enc = "Wkdoc0x1U0RPREpQT09yNmNoVklOZ1c3Smx1MHM5d1FjRzdWbzRsUXdsdUk3";
+//ISTANZIO LA CLASSE PER LA CIFRATURA TOKEN
+$key_enc=new PHP_AES_Cipher(); 
+$secr_enc=new PHP_AES_Cipher(); 
+$tok_enc=new PHP_AES_Cipher(); 
+$tok_sec_enc=new PHP_AES_Cipher();
+
+$chiave = "dipalmalongoprog";
+$iv = "progettosoasecur";
+
 
 //MEMORIZZAZIONE DEI TOKEN IN UN FILE
 $file =fopen("token.txt", "w+");
-fwrite($file, "CONSUMER KEY:".$key_enc.",");
-fwrite($file, "CONSUMER SECRET:".$secr_enc.",");
-fwrite($file, "ACCESS TOKEN:".$tok_enc.",");
-fwrite($file, "ACCESS TOKEN SECRET:".$tok_secr_enc);
+fwrite($file, "CONSUMER KEY:".$key_enc->encrypt($chiave, $iv, CONSUMER_KEY).",");
+fwrite($file, "CONSUMER SECRET:".$secr_enc->encrypt($chiave, $iv, CONSUMER_SECRET).",");
+fwrite($file, "ACCESS TOKEN:".$tok_enc->encrypt($chiave, $iv, $access_token['oauth_token']).",");
+fwrite($file, "ACCESS TOKEN SECRET:".$tok_sec_enc->encrypt($chiave, $iv, $access_token['oauth_token_secret']));
 fclose($file);
 
 //credenziali
