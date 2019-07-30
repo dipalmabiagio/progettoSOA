@@ -8,9 +8,6 @@
 
 package com.company.Main;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -18,7 +15,7 @@ import java.net.URL;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 
-public class Main{
+public class Main {
 
     private static String oauth_cons_token = "CE2Qn7ewHvi1GcnMokbfYylle";
     private static String oauth_user_token = "CRuSu8iv0nPCCHCQmd5AR5j0aylvGhwWcph8NvNJiRsb6jDLvY";
@@ -63,6 +60,7 @@ public class Main{
         //Recupero i token dal sito web e li decritto
         //fetchTokens();
 
+        /*
         OkHttpClient myclient = new OkHttpClient();
         OauthClient client = new OauthClient(oauth_cons_token,oauth_cons_secret,oauth_user_secret,oauth_user_token);
 
@@ -71,7 +69,7 @@ public class Main{
                 .get()
                 .addHeader("Authorization",OauthClient.generateOAuth(true, "GET","https://api.twitter.com/1.1/statuses/user_timeline.json?",client))
                 .addHeader("User-Agent", "Mozilla 5.0")
-                .addHeader("Accept", "*/*")
+                .addHeader("Accept", "*//*")
                 .addHeader("Cache-Control", "no-cache")
                 .addHeader("Host", "api.twitter.com")
                 .addHeader("Cookie","guest_id=v1%3A156120075303723029; lang=it")
@@ -84,7 +82,7 @@ public class Main{
         Response response = myclient.newCall(request).execute();
         System.out.println(response);
 
-
+*/
         System.out.println("stringa finale \n\n");
         OauthClient oauthClient = new OauthClient(oauth_cons_token, oauth_cons_secret, oauth_user_secret, oauth_user_token);
         System.out.println(OauthClient.generateOAuth(true, "GET", "https://api.twitter.com/1.1/statuses/user_timeline.json?", oauthClient));
