@@ -1,26 +1,23 @@
-/**
- * Questo file si occupa di:
- * 1. Recuperare i token dal sito di Altervista
- * 2. Decrittare i token
- * 3. Proporre un menù con varie scelte di interrogazioni a twitter
- * 4. Eseguire il servizio corrispondente
- */
-
 package com.company.Main;
 
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.conf.ConfigurationBuilder;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 
 public class Main {
 
-    private static String oauth_cons_token = "CE2Qn7ewHvi1GcnMokbfYylle";
-    private static String oauth_user_token = "CRuSu8iv0nPCCHCQmd5AR5j0aylvGhwWcph8NvNJiRsb6jDLvY";
-    private static String oauth_cons_secret = "1152570724084801536-DCvhd21uGYb9F3wiX4WsxraY5YKLiN";
-    private static String oauth_user_secret = "ZGhsLuSDODJPOOr6chVINgW7Jlu0s9wQcG7Vo4lQwluI7";
+    private static String oauth_cons_token = "";
+    private static String oauth_user_token = "";
+    private static String oauth_cons_secret = "";
+    private static String oauth_user_secret = "";
 
     //link dal quale recuperare le credenziali cifrate in AES
     private static URL urlCredentials;
@@ -56,48 +53,65 @@ public class Main {
         }
     }
 
-    public static void main (String args[]) throws IOException, InvalidKeyException, NoSuchAlgorithmException {
-        //Recupero i token dal sito web e li decritto
+    public static String createTweet(String tweet) throws TwitterException {
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+
+        //cb.setDebugEnabled(true).setOAuthConsumerKey(oauth_cons_token).setOAuthConsumerSecret(oauth_cons_secret).setOAuthAccessToken(oauth_user_token).setOAuthAccessTokenSecret(oauth_user_secret);
+
+        TwitterFactory tf = new TwitterFactory(cb.build());
+        Twitter twitter = tf.getInstance();
+        Status status = twitter.updateStatus(tweet);
+        return status.getText();
+    }
+
+    /**
+
+     */
+    public static void createProperties() throws IOException {
+        //creazione del file delle property per la libreria twitter4j
+        File file = new File("twitter4j.properties");
+
+        //Create the file
+        if (file.createNewFile())
+        {
+            System.out.println("File is created!");
+        } else {
+            //se il file esiste, va ripulito e riscritto
+            FileWriter writer = new FileWriter(file);
+            writer.write("");
+            writer.write("debug=true\noauth.consumerKey="+oauth_cons_token+"\noauth.consumerSecret="+oauth_cons_secret+
+                    "\noauth.accessToken="+oauth_user_token+"\noauth.accessTokenSecret="+oauth_user_secret+"\n");
+            writer.close();
+        }
+
+        //Write Content
+        FileWriter writer = new FileWriter(file);
+        writer.write("debug=true\noauth.consumerKey="+oauth_cons_token+"\noauth.consumerSecret="+oauth_cons_secret+
+                "\noauth.accessToken="+oauth_user_token+"\noauth.accessTokenSecret="+oauth_user_secret+"\n");
+        writer.close();
+    }
+
+    public static void main(String args[]) throws TwitterException, IOException {
+
         fetchTokens();
 
+        createProperties();
         /*
-        OkHttpClient myclient = new OkHttpClient();
-        OauthClient client = new OauthClient(oauth_cons_token,oauth_cons_secret,oauth_user_secret,oauth_user_token);
+        ConfigurationBuilder cb = new ConfigurationBuilder();
+        cb.setDebugEnabled(true)
+                .setOAuthConsumerKey("3uJXgZ7RdOh4MB1HdqvVs5RGO")
+                .setOAuthConsumerSecret("wdyyLPsaOWbjOprHocSVyM9FYvUOZ71fzqI4k3SCbNHpeSy8IT")
+                .setOAuthAccessToken("3227549738-fDp2NRMuYdnwwyU6Wx5ZaBha8lrvYAPnlR7WyJA")
+                .setOAuthAccessTokenSecret("kgyKOIoOSa4V4ktJQY7506dg5eT5zaK5qUV7CpbIvWTrh");
+        TwitterFactory tf = new TwitterFactory(cb.build());
+        Twitter twitter = tf.getInstance();
 
-        Request request = new Request.Builder()
-                .url("https://api.twitter.com/1.1/statuses/user_timeline.json")
-                .get()
-                .addHeader("Authorization",OauthClient.generateOAuth(true, "GET","https://api.twitter.com/1.1/statuses/user_timeline.json?",client))
-                .addHeader("User-Agent", "Mozilla 5.0")
-                .addHeader("Accept", "*//*")
-                .addHeader("Cache-Control", "no-cache")
-                .addHeader("Host", "api.twitter.com")
-                .addHeader("Cookie","guest_id=v1%3A156120075303723029; lang=it")
-                .addHeader("Accept-Encoding", "gzip, deflate")
-                .addHeader("Connection", "keep-alive")
-                .addHeader("cache-control", "no-cache")
-                .build();
+         */
+        //Twitter twitter = new TwitterFactory().getInstance();
+        //Status status = twitter.updateStatus("Prova post tweet");
 
-        System.out.println(request.header("Authorization"));
-        Response response = myclient.newCall(request).execute();
-        System.out.println(response);
-
-*/
-        System.out.println("stringa finale \n\n");
-        OauthClient oauthClient = new OauthClient(oauth_cons_token, oauth_cons_secret, oauth_user_secret, oauth_user_token);
-        System.out.println(OauthClient.generateOAuth(true, "GET", "https://api.twitter.com/1.1/statuses/user_timeline.json?", oauthClient));
-
-
-        /*
-        OkHttpClient client = new OkHttpClient();
-        //JSONObject obj = new JSONObject("{...}");
-
-        OauthClient oauthClient = new OauthClient(oauth_cons_token, oauth_cons_secret, oauth_user_secret, oauth_user_token);
-
-        String oauth = oauthClient.generateOAuth(true, "GET", "https://api.twitter.com/1.1/statuses/user_timeline.json", oauthClient);
-        */
-
-        //System.out.println(oauth);
+        System.out.println("Successfully updated the status to [" + createTweet("secondo tweet!")+ "].");
+        System.exit(0);
 
     }
 }
