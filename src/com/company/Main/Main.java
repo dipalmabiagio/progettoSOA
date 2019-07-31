@@ -1,10 +1,9 @@
+/**
+ * Classe main
+ */
 package com.company.Main;
 
-import twitter4j.Status;
-import twitter4j.Twitter;
 import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
-import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -47,25 +46,16 @@ public class Main {
         oauth_user_secret = AESCrypto.decrypt(AESCrypto.key,tokens[3]);
         oauth_user_token = AESCrypto.decrypt(AESCrypto.key,tokens[2]);
 
-        System.out.println("token decrittati:");
+        //System.out.println("token decrittati:");
         for (int i= 0; i< tokens.length; i++){
             System.out.println((AESCrypto.decrypt(AESCrypto.key,tokens[i])));
         }
     }
 
-    public static String createTweet(String tweet) throws TwitterException {
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-
-        //cb.setDebugEnabled(true).setOAuthConsumerKey(oauth_cons_token).setOAuthConsumerSecret(oauth_cons_secret).setOAuthAccessToken(oauth_user_token).setOAuthAccessTokenSecret(oauth_user_secret);
-
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();
-        Status status = twitter.updateStatus(tweet);
-        return status.getText();
-    }
-
     /**
-
+     * Questo metodo serve per generare il file twitter4j.properties: questo file di proprietà
+     * è utile alla libreria per eseguire le operazioni con twitter (GET e POST)
+     * @throws IOException
      */
     public static void createProperties() throws IOException {
         //creazione del file delle property per la libreria twitter4j
@@ -93,24 +83,16 @@ public class Main {
 
     public static void main(String args[]) throws TwitterException, IOException {
 
+        //recupero i token dal portale dell'access server
         fetchTokens();
 
+        //genero il file delle proprietà per la libreria twitter4j
         createProperties();
-        /*
-        ConfigurationBuilder cb = new ConfigurationBuilder();
-        cb.setDebugEnabled(true)
-                .setOAuthConsumerKey("3uJXgZ7RdOh4MB1HdqvVs5RGO")
-                .setOAuthConsumerSecret("wdyyLPsaOWbjOprHocSVyM9FYvUOZ71fzqI4k3SCbNHpeSy8IT")
-                .setOAuthAccessToken("3227549738-fDp2NRMuYdnwwyU6Wx5ZaBha8lrvYAPnlR7WyJA")
-                .setOAuthAccessTokenSecret("kgyKOIoOSa4V4ktJQY7506dg5eT5zaK5qUV7CpbIvWTrh");
-        TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();
 
-         */
-        //Twitter twitter = new TwitterFactory().getInstance();
-        //Status status = twitter.updateStatus("Prova post tweet");
+        //menù per scelta utente
+        System.out.println("ambiente pronto, scegli quale operazione vuoi eseguire:\n1.Posta un tweet\n2.Recupera gli ultimi tweet dalla bacheca\n3.");
 
-        System.out.println("Successfully updated the status to [" + createTweet("secondo tweet!")+ "].");
+        //System.out.println("Successfully updated the status to [" + TwitterUtilities.createTweet("secondo tweet!")+ "].");
         System.exit(0);
 
     }
