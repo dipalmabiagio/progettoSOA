@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/Main/TwitterUtilities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/JsonReader.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projSOA/com/company/Main/OauthClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/JsonReader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+            <state relative-caret-position="453">
+              <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -40,14 +36,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Main/TwitterUtilities.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="207">
+              <caret line="141" column="87" selection-start-line="141" selection-start-column="87" selection-end-line="141" selection-end-column="87" />
+              <folding>
+                <element signature="e#0#8097#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Main/PercentEncode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,12 +113,10 @@
         <option value="$PROJECT_DIR$/src/Main3.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/JsonReader.java" />
         <option value="$PROJECT_DIR$/Java/src/com/company/Main/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/Oauth.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/HttpParameter.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/BASE64Encoder.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/UrlUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/MainProva.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/AESCrypto.java" />
         <option value="$PROJECT_DIR$/php/index.php" />
@@ -118,12 +124,14 @@
         <option value="$PROJECT_DIR$/src/com/company/Main/prova.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/Main2.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/TwitterUtilities.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/PercentEncode.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Main/OauthClient.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="714" />
+    <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -132,14 +140,23 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
               <item name="projSOA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projSOA" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projSOA" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="projSOA" type="b2602c69:ProjectViewProjectNode" />
@@ -161,6 +178,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,7 +188,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -439,23 +458,31 @@
       <option name="project" value="LOCAL" />
       <updated>1564564064906</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Risolto funzionamento libreria Twitter4j">
+      <created>1564579308820</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1564579308821</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14520743" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14735337" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Thumbnails" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.28674698" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.28674698" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989071" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -463,7 +490,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5007153" side_tool="true" weight="0.28674698" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.19277108" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.19277108" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -545,23 +572,7 @@
     <entry file="file://$PROJECT_DIR$/src/Main3.java" />
     <entry file="jar://$PROJECT_DIR$/lib/okhttp-3.9.0.jar!/okhttp3/OkHttpClient.class" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/HttpClientExample.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/JsonReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/PercentEncode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/JsonReader.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/Oauth.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/BASE64Encoder.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/HttpParameter.java" />
@@ -574,13 +585,7 @@
         <state relative-caret-position="-2646" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/TwitterFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/TwitterFactory.class" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/AESCrypto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -599,51 +604,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/TwitterBase.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/internal/http/HttpClientImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2313">
-          <caret line="253" selection-start-line="253" selection-end-line="253" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/Twitter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="278" selection-start-line="278" selection-end-line="278" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/TwitterBase.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/internal/http/HttpClientImpl.class" />
+    <entry file="jar://$PROJECT_DIR$/lib/twitter4j.jar!/twitter4j/Twitter.class" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/prova.java" />
     <entry file="file://$PROJECT_DIR$/twitter4j.properties">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="233" column="89" selection-start-line="233" selection-start-column="89" selection-end-line="233" selection-end-column="89" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" lean-forward="true" selection-end-line="117" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main2.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/Main/WebReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -666,12 +634,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/PercentEncode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="480">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="100" column="63" selection-start-line="100" selection-start-column="63" selection-end-line="100" selection-end-column="63" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main/OauthClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="141" column="87" selection-start-line="141" selection-start-column="87" selection-end-line="141" selection-end-column="87" />
+          <folding>
+            <element signature="e#0#8097#0" expanded="true" />
             <element signature="imports" expanded="true" />
           </folding>
         </state>
