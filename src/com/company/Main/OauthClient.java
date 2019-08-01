@@ -1,8 +1,6 @@
 /*
 Questa classe serve a creare un client Oauth per eseguire delle
 richieste a twitter
-
-
  */
 package com.company.Main;
 
@@ -57,7 +55,8 @@ public class OauthClient {
     }
 
     /**
-     *
+     * Metodo per codificare le credenziali all'interno della stringa
+     * dello header Authorization
      * @param key
      * @param value
      * @return
@@ -79,7 +78,13 @@ public class OauthClient {
         return signatureString;
     }
 
-
+    /**
+     * Metodo che genera la firma
+     * @param signatureBaseStr
+     * @param oAuthConsumerSecret
+     * @param oAuthTokenSecret
+     * @return
+     */
     private static String generateSignature(String signatureBaseStr, String oAuthConsumerSecret, String oAuthTokenSecret) {
 
         /*
@@ -87,7 +92,7 @@ public class OauthClient {
         1. Percent encode consumer secret
         2. Ampersand (&)
         3. Percent encode the token secret
-         */
+        */
 
         byte[] byteHMAC = null;
         try {
@@ -109,10 +114,20 @@ public class OauthClient {
         return str;
     }
 
+
+    /**
+     * Metodo che genera la stringa da firmare
+     * @param DST
+     * @param client
+     * @param nonce
+     * @param timestamp
+     * @param method
+     * @param URI
+     * @return
+     */
     private static String generateSignatureBaseString (String DST, OauthClient client, String nonce, String timestamp, String method, String URI){
         /*
         GENERAZIONE DELLA FIRMA - step 1: generazione della signatureString
-
         1 - Percent encode every key and value that will be signed.
         2 - Sort the list of parameters alphabetically [1] by encoded key [2].
         3 - For each key/value pair:
@@ -123,15 +138,14 @@ public class OauthClient {
          */
 
         String signatureString = new String();
-        //signatureString = URLEncoder.encode("include_entities=true", "UTF-8");
-        signatureString += "include_entities=true";
+        signatureString = appendSignature(signatureString, "include_entities=true");
+        signatureString = appendSignature(signatureString, "include_ext_alt_text=true");
         signatureString = appendSignature(signatureString, ("oauth_consumer_key="+ client.oauth_cons_token));
         signatureString = appendSignature(signatureString, ("oauth_nonce="+nonce));
         signatureString = appendSignature(signatureString, ("oauth_signature_method="+"HMAC-SHA1"));
         signatureString = appendSignature(signatureString, ("oauth_timestamp="+timestamp));
         signatureString = appendSignature(signatureString, ("oauth_token="+ client.oauth_user_token));
         signatureString = appendSignature(signatureString, ("oauth_version=1.0"));
-        signatureString = appendSignature(signatureString, ("status=prova"));
 
         /*
         GENERAZIONE DELLA STRINGA BASE DA FIRMARE
@@ -147,18 +161,33 @@ public class OauthClient {
         signatureBaseString+="&";
         signatureBaseString+= PercentEncode.encode(URI);
         signatureBaseString+="&";
+
         signatureBaseString+= PercentEncode.encode(signatureString);
+
+        System.out.println("Signature Base String="+signatureBaseString);
 
 
         return signatureBaseString;
     }
 
-     public static String generateOAuth(boolean entities, String method, String URI, OauthClient client) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
+    /**
+     * Metodo che genera la stringa da inserire nello header Authorization
+     * @param entities
+     * @param method
+     * @param URI
+     * @param client
+     * @return
+     * @throws UnsupportedEncodingException
+     * @throws NoSuchAlgorithmException
+     * @throws InvalidKeyException
+     */
+    public static String generateOAuth(boolean entities, String method, String URI, OauthClient client) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         String DST="OAuth ";
         Random RAND = new Random();
 
         System.out.println("1 - "+DST);
 
+        DST+=
         //realm
         DST+= encodeCredentials("realm", "progettosoasec@gmail.com");
         DST+=",";
@@ -174,7 +203,7 @@ public class OauthClient {
         DST += encodeCredentials("oauth_token", client.oauth_user_token);
         DST+=",";
 
-         System.out.println("4 - "+DST);
+        System.out.println("4 - "+DST);
 
         //metodo firma
 
@@ -198,15 +227,23 @@ public class OauthClient {
         //versione di oauth
         DST+= encodeCredentials("oauth_version","1.0");
         DST+=",";
-         System.out.println("8 - "+DST);
+        System.out.println("8 - "+DST);
 
         //GENERAZIONE FIRMA
         String signatureBaseString = generateSignatureBaseString(DST, client, nonce, String.valueOf(timestamp), method, URI);
 
         //AGGIUNTA FIRMA
-         DST += encodeCredentials("oauth_signature", generateSignature(signatureBaseString, OauthClient.oauth_cons_secret, OauthClient.oauth_user_secret));
-         System.out.println("9 - "+DST);
+        //DST += encodeCredentials("oauth_signature", generateSignature(signatureBaseString, OauthClient.oauth_cons_secret, OauthClient.oauth_user_secret));
+        DST+= encodeCredentials("oauth_signature",generateSignature(signatureBaseString, oauth_cons_secret,oauth_user_secret));
+        System.out.println("9 - "+DST);
 
         return DST;
+    }
+
+    public static void main (String args[]) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
+
+        OauthClient client  = new OauthClient(oauth_cons_token, oauth_cons_secret,oauth_user_secret, oauth_user_token);
+        System.out.println(OauthClient.generateOAuth(true,"POST","https://api.twitter.com/1.1/statuses/update.json",client));
+
     }
 }
