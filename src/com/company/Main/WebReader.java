@@ -24,8 +24,6 @@ public class WebReader {
     public static String fetchPage(URL url) throws IOException {
         Scanner s = new Scanner(url.openStream());
         String line = s.nextLine();
-
-        System.out.println("line:");
         return line;
     }
 
@@ -44,7 +42,7 @@ public class WebReader {
         //Create the file
         if (file.createNewFile())
         {
-            System.out.println("File is created!");
+            System.out.println("Il file delle credenziali è stato generato!");
         } else {
             //se il file esiste, va ripulito e riscritto
             FileWriter writer = new FileWriter(file);
