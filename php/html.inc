@@ -39,8 +39,8 @@
 
       <p>
         Links:
-        <a href='http://github.com/abraham/twitteroauth'>Source Code</a> &amp;
-        <a href='http://wiki.github.com/abraham/twitteroauth/documentation'>Documentation</a>
+        <a href='https://developer.twitter.com/'>Documentation</a> &amp;
+        <a href='http://twitter4j.org/en/'>Library</a>
       </p>
 	</div>
  </footer>
