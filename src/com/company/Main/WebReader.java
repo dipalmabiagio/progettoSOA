@@ -46,14 +46,16 @@ public class WebReader {
         } else {
             //se il file esiste, va ripulito e riscritto
             FileWriter writer = new FileWriter(file);
-            writer.write("debug=true\noauth.consumerKey="+tokens[0]+"\noauth.consumerSecret="+tokens[1]+"\noauth.accessToken="+tokens[2]+"\noauth.accessTokenSecret="+tokens[3]+"\n");
+            writer.write("debug=true\noauth.consumerKey="+tokens[0]+"\noauth.consumerSecret="+tokens[1]+
+                    "\noauth.accessToken="+tokens[2]+"\noauth.accessTokenSecret="+tokens[3]+"\n");
             writer.close();
 
         }
 
         //Write Content
         FileWriter writer = new FileWriter(file);
-        writer.write("debug=true\noauth.consumerKey="+tokens[0]+"\noauth.consumerSecret="+tokens[1]+"\noauth.accessToken="+tokens[2]+"\noauth.accessTokenSecret="+tokens[3]+"\n");
+        writer.write("debug=true\noauth.consumerKey="+tokens[0]+"\noauth.consumerSecret="+tokens[1]
+                +"\noauth.accessToken="+tokens[2]+"\noauth.accessTokenSecret="+tokens[3]+"\n");
         writer.close();
 
         return tokens;

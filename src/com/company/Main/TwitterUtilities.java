@@ -57,6 +57,7 @@ public class TwitterUtilities {
             System.out.println("@" + user.getScreenName() + " - " + user.getStatus().getText());
         } else {
             // the user is protected
+            System.out.println("********** NOME UTENTE ***********");
             System.out.println("Nome Utente= @" + user.getScreenName());
         }
         System.exit(0);

@@ -83,38 +83,55 @@ public class Main {
 
     public static void main(String args[]) throws TwitterException, IOException, InvalidKeyException, NoSuchAlgorithmException {
 
-        //recupero i token dal portale dell'access server
-        fetchTokens();
+        System.out.println("Collegati a questo link per effettuare l'accesso con Twitter alla nostra app:\nhttp://www.progettosoasecurity.altervista.org/connect.php");
 
-        //genero il file delle proprietà per la libreria twitter4j
-        createProperties();
+        System.out.println("inserisci 'e' quando hai completato l'accesso.");
+
+        Scanner scanner2 = new Scanner(System.in);
+        String input = scanner2.nextLine();
+
+        if (input.contains("e")){
+            //recupero i token dal portale dell'access server
+            fetchTokens();
+
+            //genero il file delle proprietà per la libreria twitter4j
+            createProperties();
 
 
-        //menù per scelta utente
-        System.out.println("ambiente pronto, scegli quale operazione vuoi eseguire:\n1.Posta un tweet\n2.Recupera gli ultimi tweet dalla bacheca\n3.mostra le info utente");
+            //menù per scelta utente
+            System.out.println("ambiente pronto, scegli quale operazione vuoi eseguire:\n1.Posta un tweet\n2.Recupera gli ultimi tweet dalla bacheca\n3.Mostra le info utente");
 
-        //genero lo scanner per raccogliere input utente
-        Scanner scanner = new Scanner(System.in);
-        Integer choice = scanner.nextInt();
+            //genero lo scanner per raccogliere input utente
+            Scanner scanner = new Scanner(System.in);
+            Integer choice = scanner.nextInt();
 
-        switch (choice){
-            case 1:
-                //genero lo scanner per raccogliere il tweet da postare
-                Scanner scanner1 = new Scanner(System.in);
-                String tweet = scanner.nextLine();
-                TwitterUtilities.createTweet("");
-                break;
+            switch (choice){
+                case 1:
+                    System.out.println("inserisci il testo del tweet da postare:\n");
+                    //genero lo scanner per raccogliere il tweet da postare
+                    Scanner scanner1 = new Scanner(System.in);
+                    String tweet = scanner1.nextLine();
+                    TwitterUtilities.createTweet(tweet);
 
-            case 2:
-                TwitterUtilities.getHomeTimeline();
-                break;
+                    System.out.println("Post del tweet completato!\n");
+                    break;
 
-            case 3:
-                TwitterUtilities.infoUtente();
+                case 2:
+                    TwitterUtilities.getHomeTimeline();
+                    break;
 
-            default:
-                throw new IllegalStateException("Valore inatteso: " + choice);
+                case 3:
+                    TwitterUtilities.infoUtente();
+
+                default:
+                    throw new IllegalStateException("Valore inatteso: " + choice);
+            }
         }
+        else{
+            System.out.println("input errato\n");
+        }
+
+
 
         System.exit(0);
 
