@@ -17,36 +17,6 @@ $access_token = $_SESSION['access_token'];
 //CREAZIONE OGGETTO TWITTER OAUTH CON I TOKEN
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $access_token['oauth_token'], $access_token['oauth_token_secret']);
 
-//FUNZIONE PER CRIPTARE E DECRIPTARE I TOKEN
-/* function my_simple_crypt( $string, $action = 'e' ) {
-    
-    $secret_key = 'SOA_Security_project';
-    $secret_iv = '933528-938473';
- 
-    $output = false;
-    $encrypt_method = "AES-256-CBC";
-    $key = hash( 'sha256', $secret_key );
-    $iv = substr( hash( 'sha256', $secret_iv ), 0, 16 );
- 
-    if( $action == 'e' ) {
-        $output = base64_encode( openssl_encrypt( $string, $encrypt_method, $key, 0, $iv ) );
-    }
-    else if( $action == 'd' ){
-        $output = openssl_decrypt( base64_decode( $string ), $encrypt_method, $key, 0, $iv );
-    }
- 
-    return $output;
-} */
-
-
-//ENCRYPTION DEI TOKEN
-/* $key_enc = my_simple_crypt( CONSUMER_KEY, 'e' );
-$secr_enc = my_simple_crypt( CONSUMER_SECRET, 'e' );
-$tok_enc = my_simple_crypt( $access_token['oauth_token'], 'e' );
-$tok_secr_enc = my_simple_crypt( $access_token['oauth_token_secret'], 'e' ); */
-
-//esempio decriptare
-//$decrypted = my_simple_crypt( 'dHNZM28xMWVSWlBhM3d5bmlta25oRTl3aVc2a3RCZjl2U0VqMGV1U0NnST0=', 'd' );
 
 //ISTANZIO LA CLASSE PER LA CIFRATURA TOKEN
 $key_enc=new PHP_AES_Cipher(); 

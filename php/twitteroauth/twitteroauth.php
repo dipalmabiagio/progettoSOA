@@ -1,17 +1,9 @@
 <?php
 
-/*
- * Abraham Williams (abraham@abrah.am) http://abrah.am
- *
- * The first PHP Library to support OAuth for Twitter's REST API.
- */
-
-/* Load OAuth lib. You can find it at http://oauth.net */
 require_once('OAuth.php');
 
-/**
- * Twitter OAuth class
- */
+/**Twitter OAuth class*/
+
 class TwitterOAuth {
   /* Contains the last HTTP status code returned. */
   public $http_code;
@@ -39,23 +31,20 @@ class TwitterOAuth {
 
 
 
-  /**
-   * Set API URLS
-   */
+  //Set API URLS
+   
   function accessTokenURL()  { return 'https://api.twitter.com/oauth/access_token'; }
   function authenticateURL() { return 'https://api.twitter.com/oauth/authenticate'; }
   function authorizeURL()    { return 'https://api.twitter.com/oauth/authorize'; }
   function requestTokenURL() { return 'https://api.twitter.com/oauth/request_token'; }
 
-  /**
-   * Debug helpers
-   */
+  /**Debug helpers*/
+  
   function lastStatusCode() { return $this->http_status; }
   function lastAPICall() { return $this->last_api_call; }
 
-  /**
-   * construct TwitterOAuth object
-   */
+  /**construct TwitterOAuth object*/
+  
   function __construct($consumer_key, $consumer_secret, $oauth_token = NULL, $oauth_token_secret = NULL) {
     $this->sha1_method = new OAuthSignatureMethod_HMAC_SHA1();
     $this->consumer = new OAuthConsumer($consumer_key, $consumer_secret);
@@ -102,11 +91,6 @@ class TwitterOAuth {
   /**
    * Exchange request token and secret for an access token and
    * secret, to sign API calls.
-   *
-   * @returns array("oauth_token" => "the-access-token",
-   *                "oauth_token_secret" => "the-access-secret",
-   *                "user_id" => "9436992",
-   *                "screen_name" => "abraham")
    */
   function getAccessToken($oauth_verifier = FALSE) {
     $parameters = array();
@@ -122,11 +106,6 @@ class TwitterOAuth {
   /**
    * One time exchange of username and password for access token and secret.
    *
-   * @returns array("oauth_token" => "the-access-token",
-   *                "oauth_token_secret" => "the-access-secret",
-   *                "user_id" => "9436992",
-   *                "screen_name" => "abraham",
-   *                "x_auth_expires" => "0")
    */  
   function getXAuthToken($username, $password) {
     $parameters = array();

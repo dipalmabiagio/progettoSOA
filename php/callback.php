@@ -14,20 +14,20 @@ if (isset($_REQUEST['oauth_token']) && $_SESSION['oauth_token'] !== $_REQUEST['o
   header('Location: ./clearsessions.php');
 }
 //CREAZIONE OGGETTO OAUTH CON APP KEY/SECRET E TOKEN KEY/SECRET
-
 $connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, $_SESSION['oauth_token'], $_SESSION['oauth_token_secret']);
 
 
 //RICHIESTA DI ACCESS TOKEN
+//twitteroauth.php
 $access_token = $connection->getAccessToken($_REQUEST['oauth_verifier']);
+  
+
 
 //SALVATAGGIO DELL'ACCESS TOKEN
 $_SESSION['access_token'] = $access_token;
 
-
 unset($_SESSION['oauth_token']);
 unset($_SESSION['oauth_token_secret']);
-
 
 if (200 == $connection->http_code) {
   
@@ -35,6 +35,5 @@ if (200 == $connection->http_code) {
   $_SESSION['status'] = 'verified';
   header('Location: ./index.php');
 } else {
-  
   header('Location: ./clearsessions.php');
 }
