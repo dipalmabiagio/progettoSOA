@@ -1,14 +1,6 @@
 <component name="libraryTable">
   <library name="twitter4j">
     <CLASSES />
-    <JAVADOC>
-      <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-appengine/javadoc" />
-      <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-async/javadoc" />
-      <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-core/javadoc" />
-      <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-examples/javadoc" />
-      <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-http2-support/javadoc" />
-      <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-stream/javadoc" />
-    </JAVADOC>
     <SOURCES>
       <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-appengine/src/main/java" />
       <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-appengine/src/test/java" />
