@@ -54,6 +54,10 @@ class TwitterOAuth {
 
 
   //REQUEST_TOKEN DA TWITTER
+  //parametro callback = null in input
+  //se è vuoto, lo creaa
+  //crea una richiesta OAuth con parametro URLtokenrequest di tipo get
+  //crea un consumer con parametri token e token secret
   //ritorna una chiave/valore che contiene il token_oauth e il token_secret
    
   function getRequestToken($oauth_callback = NULL) {
@@ -69,6 +73,7 @@ class TwitterOAuth {
 
   // URL AUTORIZZATO
   //ritorna una stringa
+  //prende in input il token e un boolean
    
   function getAuthorizeURL($token, $sign_in_with_twitter = TRUE) {
     if (is_array($token)) {
@@ -83,6 +88,7 @@ class TwitterOAuth {
 
   
   //scambio di un request token e di un secret token per ottenere un access token e un access token secret
+  //prende in considerazione l'oauth verifier; lo verifica e se è valido, crea un consumer e restiruisce i token
    
   function getAccessToken($oauth_verifier = FALSE) {
     $parameters = array();
@@ -96,7 +102,7 @@ class TwitterOAuth {
   }
 
 
-   //Scambio unico di nome utente e password per token di accesso e segreto.
+   //Scambio di nome utente e password per token di accesso e segreto.
    //creazione di un consumer con i parametri oauth_token e oauth_token_secret
  
   function getXAuthToken($username, $password) {
