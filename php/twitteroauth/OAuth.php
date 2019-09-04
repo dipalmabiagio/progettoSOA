@@ -1,12 +1,10 @@
 <?php
-// vim: foldmethod=marker
 
-/* Generic exception class
- */
 class OAuthException extends Exception {
   // pass
 }
 
+//classe consumer che ha una chiave e un segreto; si crea una callback url per redirigere l'utente
 class OAuthConsumer {
   public $key;
   public $secret;
@@ -22,24 +20,23 @@ class OAuthConsumer {
   }
 }
 
+
+// access tokens e request tokens
+//key = token
+//secret = token secret
 class OAuthToken {
-  // access tokens and request tokens
   public $key;
   public $secret;
 
-  /**
-   * key = the token
-   * secret = the token secret
-   */
   function __construct($key, $secret) {
     $this->key = $key;
     $this->secret = $secret;
   }
 
-  /**
-   * generates the basic string serialization of a token that a server
-   * would respond to request_token and access_token calls with
-   */
+ 
+  //genera la serializzazione del token
+  //il server vuole rispondere al token request con un access token
+   
   function to_string() {
     return "oauth_token=" .
            OAuthUtil::urlencode_rfc3986($this->key) .
@@ -52,50 +49,37 @@ class OAuthToken {
   }
 }
 
-/**
- * A class for implementing a Signature Method
- * See section 9 ("Signing Requests") in the spec
- */
+
+//classe che implementa il metodo della firma
+
 abstract class OAuthSignatureMethod {
-  /**
-   * Needs to return the name of the Signature Method (ie HMAC-SHA1)
-   * @return string
-   */
+  //ritorna il nome del metodo 
   abstract public function get_name();
 
-  /**
-   * Build up the signature
-   * NOTE: The output of this function MUST NOT be urlencoded.
-   * the encoding is handled in OAuthRequest when the final
-   * request is serialized
-   * @param OAuthRequest $request
-   * @param OAuthConsumer $consumer
-   * @param OAuthToken $token
-   * @return string
-   */
+   //request = OAUth request
+   //consumer = OAuth consumer
+   //token = OAuth token
   abstract public function build_signature($request, $consumer, $token);
 
-  /**
-   * Verifies that a given signature is correct
-   * @param OAuthRequest $request
-   * @param OAuthConsumer $consumer
-   * @param OAuthToken $token
-   * @param string $signature
-   * @return bool
-   */
+  //verifica che la firma è corretta
+   //OAuthRequest = $request
+   //OAuthConsumer = $consumer
+   //OAuthToken = $token
+   // string  = $signature
+   // @return boolean
+   
   public function check_signature($request, $consumer, $token, $signature) {
     $built = $this->build_signature($request, $consumer, $token);
     return $built == $signature;
   }
 }
 
-/**
- * The HMAC-SHA1 signature method uses the HMAC-SHA1 signature algorithm as defined in [RFC2104] 
- * where the Signature Base String is the text and the key is the concatenated values (each first 
- * encoded per Parameter Encoding) of the Consumer Secret and Token Secret, separated by an '&' 
- * character (ASCII code 38) even if empty.
- *   - Chapter 9.2 ("HMAC-SHA1")
- */
+//Il metodo di firma HMAC-SHA1 utilizza l'algoritmo di firma HMAC-SHA1 
+
+ //dove Signature Base String è il testo e la chiave sono i valori concatenati (ciascuno per primo
+// codificato per Parameter Encoding) del Consumer Secret e Token Secret, separati da un '&'
+ //carattere (codice ASCII 38) anche se vuoto.
+ 
 class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
   function get_name() {
     return "HMAC-SHA1";
@@ -117,25 +101,14 @@ class OAuthSignatureMethod_HMAC_SHA1 extends OAuthSignatureMethod {
   }
 }
 
-/**
- * The PLAINTEXT method does not provide any security protection and SHOULD only be used 
- * over a secure channel such as HTTPS. It does not use the Signature Base String.
- *   - Chapter 9.4 ("PLAINTEXT")
- */
+//metodo plaintext non da sicurezza e protezione; deve essere usato solo in canali sicuri come https
+
 class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
   public function get_name() {
     return "PLAINTEXT";
   }
 
-  /**
-   * oauth_signature is set to the concatenated encoded values of the Consumer Secret and 
-   * Token Secret, separated by a '&' character (ASCII code 38), even if either secret is 
-   * empty. The result MUST be encoded again.
-   *   - Chapter 9.4.1 ("Generating Signatures")
-   *
-   * Please note that the second encoding MUST NOT happen in the SignatureMethod, as
-   * OAuthRequest handles this!
-   */
+ 
   public function build_signature($request, $consumer, $token) {
     $key_parts = array(
       $consumer->secret,
@@ -150,14 +123,7 @@ class OAuthSignatureMethod_PLAINTEXT extends OAuthSignatureMethod {
   }
 }
 
-/**
- * The RSA-SHA1 signature method uses the RSASSA-PKCS1-v1_5 signature algorithm as defined in 
- * [RFC3447] section 8.2 (more simply known as PKCS#1), using SHA-1 as the hash function for 
- * EMSA-PKCS1-v1_5. It is assumed that the Consumer has provided its RSA public key in a 
- * verified way to the Service Provider, in a manner which is beyond the scope of this 
- * specification.
- *   - Chapter 9.3 ("RSA-SHA1")
- */
+//metodo RSA-SHA1
 abstract class OAuthSignatureMethod_RSA_SHA1 extends OAuthSignatureMethod {
   public function get_name() {
     return "RSA-SHA1";
