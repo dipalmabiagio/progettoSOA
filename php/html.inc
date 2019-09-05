@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="login">
-      <h2>Welcome to a Twitter OAuth PHP example</h2>
+      <h2>Welcome to a Twitter OAuth project</h2>
 	<br><br><br>
       <?php if (isset($menu)) { ?>
         <?php echo $menu; ?>

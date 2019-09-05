@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32eb880-487f-416e-a282-ba9115332cc7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/twitter4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/twitter4j.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/twitter4j__2_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/twitter4j__2_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/twitter4j_async_4_0_7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/twitter4j_async_4_0_7.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/class_encryption.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/class_encryption.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

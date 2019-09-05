@@ -25,13 +25,11 @@ class PHP_AES_Cipher {
 		//OPENSSL_RAW_DATA dice a openssl_encrypt () di restituire un cipherText come dati non elaborati. 
 		//Per default, lo restituisce con codifica Base64.
 
-
 		//codifica in base 64 dell'iv
 		$encodedIV = base64_encode($iv);
         $encryptedPayload = $encodedEncryptedData.":".$encodedIV;
 
         return $encryptedPayload;
-
     }
 
 	//input: chiave, stringa da decriptare
