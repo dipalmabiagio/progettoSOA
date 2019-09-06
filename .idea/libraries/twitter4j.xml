@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="twitter4j">
     <CLASSES />
+    <JAVADOC />
     <SOURCES>
       <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-appengine/src/main/java" />
       <root url="file://$USER_HOME$/Downloads/twitter4j-4-2/twitter4j-appengine/src/test/java" />
