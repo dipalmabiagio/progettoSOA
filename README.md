@@ -119,9 +119,28 @@ Dopo aver ottenuto i token si applica una cifratura grazie al cifrario simmetric
 
 Allo stesso modo, così come è implementata la [cifratura](Encryption dei token) viene introdotta la decifratura speculare: questo meccanismo - implementato nella classe _AESCrypto.java_ serve per trasmettere in modo sicuro i token dal sito al software, proteggendoli con la cifratura ed esponendoli al link https://progettosoasecurity.altervista.org/token.txt.
 
-Le fasi sono:
+#### Fasi del funzionamento del software locale
+
 1. La componente _WebReader.java_ recupera il testo al link di token.txt 
 2. Controlla che i token siano stati scritti e li decifra
 3. A questo punto è possibile fare delle chiamate a Twitter utilizzando la libreria [_twitter4j_](http://twitter4j.org/en/)
+
+#### TwitterUtilities.java
+
+TwitterUtilities.java contiene i metodi per l’esecuzione di azioni proposte all’utente, attraverso un menù all’interno della classe Main.java. Queste operazioni possono essere eseguite dal Consumer Server solo dopo aver ottenuto i token. La libreria Twitter4J ha permesso la costruzione di queste utilities. Le azioni implementate sono:
+* Postare un Tweet
+* Ottenere una timeline della home (tweet postati da altri utenti)
+* Ottenere info dell'utente
+
+In questa circostanza è bene spiegare che, inizialmente, l’intento era quello di implementare, in modo del tutto autonomo, del codice che potesse creare delle richieste POST e GET a Twitter al fine di realizzare le funzioni sopracitate.
+Il motivo per cui non è stato possibile raggiungere l’obiettivo è la scarsa documentazione ufficiale sulla generazione della firma. I problemi
+riscontrati sono discussi nella sezione riguardante il branch oauthGeneration.
+
+
+## Contributors
+* [Biagio Dipalma](https://www.linkedin.com/in/biagio-dipalma/) - Università degli Studi di Milano | La Statale. CDL Magistrale in Sicurezza Informatica.
+* [Sara Longo](https://www.linkedin.com/in/sara-longo-2b2830187/) - Università degli Studi di Milano | La Statale. CDL Magistrale in Sicurezza Informatica.
+
+
 
 
