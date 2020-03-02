@@ -168,7 +168,8 @@ TwitterUtilities.java contiene i metodi per l’esecuzione di azioni proposte al
             	System.out.println("Nome Utente= @" + user.getScreenName());
         	}
           System.exit(0);
-    }
+	  }
+    
 
 
 In questa circostanza è bene spiegare che, inizialmente, l’intento era quello di implementare, in modo del tutto autonomo, del codice che potesse creare delle richieste POST e GET a Twitter al fine di realizzare le funzioni sopracitate.
