@@ -113,7 +113,7 @@ Dopo aver ottenuto i token si applica una cifratura grazie al cifrario simmetric
     }
 
 
-### Script in  Java in locale
+### Script Java in locale
 
 #### Decifratura dei token
 
@@ -129,8 +129,47 @@ Allo stesso modo, così come è implementata la [cifratura](Encryption dei token
 
 TwitterUtilities.java contiene i metodi per l’esecuzione di azioni proposte all’utente, attraverso un menù all’interno della classe Main.java. Queste operazioni possono essere eseguite dal Consumer Server solo dopo aver ottenuto i token. La libreria Twitter4J ha permesso la costruzione di queste utilities. Le azioni implementate sono:
 * Postare un Tweet
+    
+    	System.out.println("inserisci il testo del tweet da postare:\n");
+                    //genero lo scanner per raccogliere il tweet da postare
+                    Scanner scanner1 = new Scanner(System.in);
+                    String tweet = scanner1.nextLine();
+                    TwitterUtilities.createTweet(tweet);
+
+                    System.out.println("Post del tweet completato!\n");
+		    
 * Ottenere una timeline della home (tweet postati da altri utenti)
+
+		public static void getHomeTimeline() throws TwitterException {
+        Twitter twitter = TwitterFactory.getSingleton();
+        List<Status> statuses = twitter.getHomeTimeline();
+        System.out.println("Mostro la home timeline");
+        for (Status status : statuses) {
+            System.out.println(status.getUser().getName() + ":" +
+                    status.getText());
+        }
+    	}
+		
 * Ottenere info dell'utente
+
+		public static void infoUtente () throws TwitterException{
+        Twitter twitter = new TwitterFactory().getInstance();
+        User user = null;
+        try {
+            user = twitter.showUser(TwitterUtilities.NOME_UTENTE);
+        } catch (TwitterException e) {
+            e.printStackTrace();
+        }
+        if (user.getStatus() != null) {
+            System.out.println("@" + user.getScreenName() + " - " + user.getStatus().getText());
+        } else {
+            // the user is protected
+            System.out.println("********** NOME UTENTE ***********");
+            System.out.println("Nome Utente= @" + user.getScreenName());
+        }
+        System.exit(0);
+    }
+
 
 In questa circostanza è bene spiegare che, inizialmente, l’intento era quello di implementare, in modo del tutto autonomo, del codice che potesse creare delle richieste POST e GET a Twitter al fine di realizzare le funzioni sopracitate.
 Il motivo per cui non è stato possibile raggiungere l’obiettivo è la scarsa documentazione ufficiale sulla generazione della firma. I problemi
