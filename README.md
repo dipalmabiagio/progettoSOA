@@ -115,5 +115,13 @@ Dopo aver ottenuto i token si applica una cifratura grazie al cifrario simmetric
 
 ### Script in  Java in locale
 
+#### Decifratura dei token
+
+Allo stesso modo, così come è implementata la [cifratura](Encryption dei token) viene introdotta la decifratura speculare: questo meccanismo - implementato nella classe _AESCrypto.java_ serve per trasmettere in modo sicuro i token dal sito al software, proteggendoli con la cifratura ed esponendoli al link https://progettosoasecurity.altervista.org/token.txt.
+
+Le fasi sono:
+1. La componente _WebReader.java_ recupera il testo al link di token.txt 
+2. Controlla che i token siano stati scritti e li decifra
+3. A questo punto è possibile fare delle chiamate a Twitter utilizzando la libreria [_twitter4j_](http://twitter4j.org/en/)
 
 
